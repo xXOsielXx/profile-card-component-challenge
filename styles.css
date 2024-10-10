@@ -1,0 +1,142 @@
+:root {
+    --white: #fefefe;
+    --black: #000;
+    --dark-cyan: hsl(185, 75%, 39%);
+    --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+    --dark-gray: hsl(0, 0%, 59%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-size: 12px;
+}
+
+body {
+	min-height: 100%;
+	background: url("./images/bg-pattern-bottom.svg") bottom -600px right -700px no-repeat, url("./images/bg-pattern-top.svg") top -600px left -700px no-repeat, var(--dark-cyan) ;
+	color: var(--dark-grayish-blue);
+	font-family: "Kumbh Sans", sans-serif;
+}
+
+body, main {
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+    justify-content: center;
+}
+
+main {
+    height: 100dvh;
+    width: 100%;
+    padding: 32px;
+}
+
+/* Profile card */
+
+.profile-card {
+    max-width: 350px;
+    min-width: 350px;
+    background-color: var(--white);
+    box-shadow: 0 4px 16px -12px var(--black);
+    border-radius: 16px;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.profile-card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    background: url("./images/bg-pattern-card.svg") top 0 left 0 no-repeat;
+
+    & > div {
+        margin-bottom: 28px;
+        text-align: center;
+
+        & > div {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+    }
+
+    .profile-card__title {
+        font-size: 24px;
+        margin-right: 8px;
+    }
+}
+
+.profile-card__avatar {
+    width: 100px;
+    height: 100px;
+    margin: 90px auto 0;
+    border: 4px solid var(--white);
+    border-radius: 50%;
+}
+
+.profile-card__stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    padding: 28px;
+
+    & > p span {
+        display: block;
+        letter-spacing: 2px;
+        margin-top: 8px;
+    }
+}
+
+/* Attribution */
+
+.attribution {
+    width: 100%;
+	text-align: center;
+	padding: 16px 0;
+}
+
+.attribution a {
+	text-decoration: none;
+	color: var(--very-dark-desaturated-blue);
+}
+
+/* Utility classes */
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fs-large {
+    font-size: 18px;
+}
+
+.fs-medium {
+    font-size: 14px;
+}
+
+.text-very-dark-blue {
+    color: var(--very-dark-desaturated-blue);
+}
+
+@media only screen and (min-width: 576px) {
+    body {
+        background: url("./images/bg-pattern-bottom.svg") bottom -600px right -150px no-repeat, url("./images/bg-pattern-top.svg") top -500px left -150px no-repeat, var(--dark-cyan) ;
+    }
+
+    .attribution {
+        position: absolute;
+        bottom: 16px;
+    }
+}
